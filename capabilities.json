@@ -1,0 +1,31 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Category",
+      "name": "category",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Values",
+      "name": "values",
+      "kind": "Grouping"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "for": {
+            "in": "category"
+          }
+        },
+        "values": {
+          "for": {
+            "in": "values"
+          }
+        }
+      }
+    }
+  ],
+  "objects": {}
+}

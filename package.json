@@ -1,0 +1,26 @@
+{
+  "name": "svg-zone-coloring",
+  "version": "1.0.0",
+  "description": "A Power BI custom visual that colors SVG zones based on data",
+  "scripts": {
+    "pbiviz": "node ./node_modules/powerbi-visuals-tools/bin/pbiviz.js",
+    "start": "node ./node_modules/powerbi-visuals-tools/bin/pbiviz.js start",
+    "package": "node ./node_modules/powerbi-visuals-tools/bin/pbiviz.js package"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.41.0",
+    "d3": "^7.8.5",
+    "powerbi-visuals-utils-dataviewutils": "^2.2.0",
+    "powerbi-visuals-utils-typeutils": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "powerbi-visuals-api": "~3.8.0",
+    "powerbi-visuals-tools": "^3.0.0",
+    "svgexport": "^0.4.1",
+    "typescript": "^4.0.3"
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
+}

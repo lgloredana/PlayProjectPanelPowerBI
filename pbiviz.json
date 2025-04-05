@@ -1,0 +1,25 @@
+{
+  "visual": {
+    "name": "svgZoneColoring",
+    "displayName": "SVG Zone Coloring",
+    "guid": "svgZoneColoringF0B7A7D6B4A4",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "A visual that colors SVG zones based on data",
+    "supportUrl": "https://github.com/yourusername/svg-zone-coloring",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "3.8.0",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": [],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": []
+}

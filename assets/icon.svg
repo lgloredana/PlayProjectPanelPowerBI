@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="32" height="32" fill="#F2F2F2"/>
+    
+    <!-- Colored zones -->
+    <rect x="4" y="4" width="8" height="8" fill="#FF6B6B"/>
+    <rect x="16" y="4" width="8" height="8" fill="#4ECDC4"/>
+    <rect x="4" y="16" width="8" height="8" fill="#45B7D1"/>
+    <rect x="16" y="16" width="8" height="8" fill="#96CEB4"/>
+    
+    <!-- Border -->
+    <rect x="1" y="1" width="30" height="30" fill="none" stroke="#333333" stroke-width="1"/>
+</svg> 
