@@ -6,9 +6,9 @@
       "kind": "Grouping"
     },
     {
-      "displayName": "Values",
+      "displayName": "Color",
       "name": "values",
-      "kind": "Grouping"
+      "kind": "Measure"
     }
   ],
   "dataViewMappings": [
@@ -17,12 +17,21 @@
         "categories": {
           "for": {
             "in": "category"
+          },
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 3
+            }
           }
         },
         "values": {
-          "for": {
-            "in": "values"
-          }
+          "select": [
+            {
+              "bind": {
+                "to": "values"
+              }
+            }
+          ]
         }
       }
     }

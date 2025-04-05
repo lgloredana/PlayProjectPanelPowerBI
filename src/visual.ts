@@ -11,6 +11,7 @@ export class Visual implements IVisual {
   private container: d3.Selection<HTMLDivElement, any, any, any>;
 
   constructor(options: VisualConstructorOptions) {
+    console.log("Initializing visual");
     this.container = d3
       .select(options.element)
       .append("div")
@@ -45,15 +46,21 @@ export class Visual implements IVisual {
       .attr("id", "zone_3")
       .attr("d", "M150 200 L250 200 L200 250 Z")
       .attr("fill", "#CCCCCC");
+
+    console.log("Visual initialized with default zones");
   }
 
   public update(options: VisualUpdateOptions) {
+    console.log("Update called with options:", options);
+
     if (!options.dataViews || !options.dataViews[0]) {
       console.log("No dataViews available");
       return;
     }
 
     const dataView = options.dataViews[0];
+    console.log("DataView:", dataView);
+
     if (!dataView.categorical) {
       console.log("No categorical data available");
       return;
@@ -62,28 +69,35 @@ export class Visual implements IVisual {
     const categories = dataView.categorical.categories;
     const values = dataView.categorical.values;
 
-    if (!categories || !categories[0] || !values || !values[0]) {
-      console.log("Missing categories or values");
-      console.log("Categories:", categories);
-      console.log("Values:", values);
+    console.log("Categories:", categories);
+    console.log("Values:", values);
+
+    if (!categories || !categories[0]) {
+      console.log("Missing categories");
       return;
     }
 
     const zoneIds = categories[0].values;
-    const colors = values[0].values;
-
-    console.log("Data received:");
     console.log("ZoneIds:", zoneIds);
-    console.log("Colors:", colors);
+
+    // Handle color values
+    let colors: any[] = [];
+    if (values && values[0]) {
+      colors = values[0].values;
+      console.log("Colors from values:", colors);
+    } else if (dataView.categorical.values) {
+      colors = dataView.categorical.values.map((v) => v.values[0]);
+      console.log("Colors from categorical values:", colors);
+    }
 
     // Update colors for each zone
     for (let i = 0; i < zoneIds.length; i++) {
       const zoneId = zoneIds[i]?.toString();
-      const color = colors[i]?.toString();
+      const color = colors[i] || "#CCCCCC"; // Default to gray if no color specified
 
       console.log(`Updating zone ${zoneId} with color ${color}`);
 
-      if (zoneId && color) {
+      if (zoneId) {
         const element = this.svg.select(`#${zoneId}`);
         if (!element.empty()) {
           element.attr("fill", color);
